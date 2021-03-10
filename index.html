@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="fonts/fontawesome-5.15.2-web/css/all.css">
+        <link rel="stylesheet" type="text/css" href="styles/prism.css">
+        <title>CSS Documentation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <header>
+            <nav id="navbar">
+                <div class="header-tag"><h1>CSS Documentation</h1></div>
+                <div id="nav-area">
+                <ul>
+                    <li class="nav-item"><a href="#Introduction">Introduction <div class="nav-icon"><i class="fas fa-arrow-right"></i></div></a></li>
+                    <li class="nav-item"><a href="#Getting_Started">Getting Started <div class="nav-icon"><i class="fas fa-arrow-right"></i></div></a></li>
+                    <li class="nav-item"><a href="#Styling_the_Page">Styling the Page <div class="nav-icon"><i class="fas fa-arrow-right"></i></div></a></li>
+                    <li class="nav-item"><a href="#Styling_Text">Styling Text <div class="nav-icon"><i class="fas fa-arrow-right"></i></div></a></li>
+                    <li class="nav-item"><a href="#Styling_Images">Styling Images <div class="nav-icon"><i class="fas fa-arrow-right"></i></div></a></li>
+                    <li class="nav-item"><a href="#Variables">Variables <div class="nav-icon"><i class="fas fa-arrow-right"></i></div></a></li>
+                    <li class="nav-item"><a href="#Positions">Positions <div class="nav-icon"><i class="fas fa-arrow-right"></i></div></a></li>
+                    <li class="nav-item"><a href="#Colors_and_Gradients">Colors and Gradients <div class="nav-icon"><i class="fas fa-arrow-right"></i></div></a></li>
+                    <li class="nav-item"><a href="#Animations">Animations <div class="nav-icon"><i class="fas fa-arrow-right"></i></div></a></li>
+                    <li class="nav-item"><a href="#Flexbox">Flexbox <div class="nav-icon"><i class="fas fa-arrow-right"></i></div></a></li>
+                    <li class="nav-item"><a href="#CSS_Grids">CSS Grids <div class="nav-icon"><i class="fas fa-arrow-right"></i></div></a></li>
+                    <li class="nav-item"><a href="#Responsive_Web_Design">Responsive Web Design <div class="nav-icon"><i class="fas fa-arrow-right"></i></div></a></li>
+                </ul>
+                </div>
+            </nav>
+        </header>
+        <main id="main-doc">
+            <section class="main-section" id="Introduction_Section">
+                <span class="anchor" id="Introduction"></span>
+                <h2>Introduction</h2>
+                <p>CSS is a styling language. It is used to design your website. Whenever you see a page that has certain colors, text formatting, sizing, etc. - you can be sure that it is CSS in play.</p>
+                <p>This is my own personal CSS documentation. It is based on my own learning. Feel free to use it, bookmark, or check out my <a href="https://adamhayat.github.io/portfolio" target=_blank>portfolio!</a></p>
+            </section>
+            <section class="main-section" id="Getting_Started_Section">
+                <span class="anchor" id="Getting_Started"></span>
+                <h2>Getting Started</h2>
+                <p>In order to get started, you will first want to have a website to work off of. I'd suggest setting up with GitHub and Git. The cool thing about GitHub is that you can use GitHub pages to host your projects for free. You will also want a code editor like VSCode, and a way to view your code live (I'd suggest the Live Server extension if you're using VSCode). </p>
+                <p>Your basic folder structure should look like this:</p>
+                <ul>
+                    <li>readme.MD</li>
+                    <li>index.html</li>
+                    <li>images</li>
+                    <li>styles > style.css</li>
+                    <li>scripts > main.js</li>
+                    <li>fonts > *I recommend using FontAwesome icons</li>
+                </ul>
+                <p>Next, you will want to setup a basic HTML document in your index.html. As you build it out, you can apply the CSS styles in this documentation.</p>
+                <p>Here is a basic template:</p>
+<pre class="line-numbers"><code class="language-html"><xmp><!doctype HTML>
+<html lang="en">
+    <head>
+    </head>
+    < body> <!--Remove space - live server breaks the code -->
+        <header>
+        </header>
+        <main>
+        </main>
+        <footer>
+        </footer>                        
+    </ body> <!--Remove space - live server breaks the code -->
+</html></xmp></code></pre>       
+<p>Once you have your HTML set up, you can add "selectors" to identify the piece of HTML that you want to stylize. The most common ones are "class" which is shown as <code class="language-css">.</code> or an ID, shown as <code class="language-css">#</code>. These selectors are added to the HTML. You can target all of a certain class or ID in a container by doing <code class="language-css">></code> after it. To make sense of this all, view the examples below.</p>
+<pre class="line-numbers"><code class="language-css"><xmp><div class="container" id="container-1">
+</div>
+    
+.container {
+    height: 100px;
+    width: 100px;
+}              
+
+#container-1 {
+    background-color: black;
+}
+                </xmp></code></pre>
+            </section>
+            <section class="main-section" id="Styling_the_Page_Section">
+                <span class="anchor" id="Styling_the_Page"></span>
+                <h2>Styling The Page</h2>
+                <p>You can change pretty much everything to do with the page- including all of the containers and elements inside. Here are some common examples of page styles.</p>
+<pre class="line-numbers"><code class="language-css">html {
+    overscroll-behavior: none; /* Removes extra scroll when you scroll past the page boundaries */
+    font-family: 'lato', sans-serif; /* set font family */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); /* Make font look nicer */
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; /* make font look nicer */
+    font-size: 18px;
+    outline: none; /* remove outline when clicking on something */
+}
+
+body {
+    background-color: black; /* changes the background */
+    padding: 0; /* change padding on page */
+    margin: 0; /* changes the margin of the page */
+}
+</code></pre>
+            </section>
+            <section class="main-section" id="Styling_Text_Section">
+                <span class="anchor" id="Styling_Text"></span>
+                <h2>Styling Text</h2>
+                Style text in a way that makes it readable. You can still headings and paragraphs.You can also style text inline by using <code class="language-css"><xmp><strong></strong></xmp></code>, italicize by using <code class="language-css"><xmp><em></em></xmp></code> and underline using <code class="language-css"><xmp><u></u></xmp></code>. Aside from inline styling, see how to style with CSS below.
+<pre class="line-numbers"><code class="language-css">h1 h2 h3 h4 h5 h6 {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+p {
+    letter-spacing: 3px;
+    font-style: italicize;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.container > * p { /*all p elements inside of this container class */
+    font-size: 8em;
+}
+</code></pre>
+            </section>
+            <section class="main-section" id="Styling_Images_Section">
+                <span class="anchor" id="Styling_Images"></span>
+                <h2>Styling Images</h2>
+                <p>Control image sizing, alignment, borders, and other characteristics directly with CSS. Note that an image should always have an <code class="language-css">alt="Description of Image"</code> tag in case it doesn't load. See examples of common image styles below.</p>
+<pre class="line-numbers"><code class="language-css">#image-id {
+    margin: auto; /*center an image */
+    height: 5em;
+    width: 5em;
+    border-radius: 50%; /* make the image a circle */
+}
+</code></pre>
+            </section>
+            <section class="main-section" id="Variables_Section">
+                <span class="anchor" id="Variables"></span>
+                <h2>Variables</h2>
+                <p>Variables let you assign a easy code in place of a longer or harder to remember code. This means you can call a color or whatever it is you are making a variable by type <code class="language-css">var(--color1)</code> for example. This is beneficial with colors because you can use a simple code VS memorizing a more complicated color code. Below are examples of this.</p>
+<pre class="line-numbers"><code class="language-css">:root { /* Essential like using html to target the entire HTML */
+    --color1: rgba(255, 255, 255, 1);
+    --color2: rgba(156, 160, 161, 1);
+    --color3: rgba(215, 212, 204, 1);
+    --color4: rgba(167, 192, 190, 1);
+    --color5: rgba(77, 103, 114, 1);
+}</code></pre>
+            </section>
+            <section class="main-section" id="Positions_Section">
+                <span class="anchor" id="Positions"></span>
+                <h2>Positions</h2>
+                <p>Set a position for your element to determine how it should act on the page. If you have multiple elements, use <code class="language-css">z-index -1</code>.</p>
+                <p><strong>Relative</strong> is used to move the position of an element on the page relative to its current position, without changing other items. It can be used with left, right, top or bottom. Bottom moves it higher, left moves it right.</p>
+<pre class="line-numbers"><code class="language-css">.class-name {
+    position: relative;
+    bottom: 15px;
+    left: 10px;
+}</code></pre>
+                <p><strong>Absolute</strong> locks your element in place relative to its parent container. It locks relative to the closest positioned ancestor, so if you forget to add a position rule to the parent item, it will keep looking until it finds one or defaults to the body tag. It uses top, bottom, right and left.</p>
+<pre class="line-numbers"><code class="language-css">.class-name {
+    position: absolute
+    top: 50px;
+    left: 50px;
+}</code></pre>
+                <p><strong>Fixed</strong> is a type of absolute position. The difference is that an element with a fixed position won't move when a user scrolls. For example, a sticky navigation.</p>
+<pre class="line-numbers"><code class="language-css">.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}</code></pre>
+                <p><strong>Float</strong> is used to remove the element from the normal flow of a document and pushed to the left or right, to float on the side. Usually used with width to declare how much space it requires.</p>
+<pre class="line-numbers"><code class="language-css">.class-name {
+    float: left;
+    width: 50%;
+}</code></pre>
+            </section>
+            <section class="main-section" id="Colors_and_Gradients_Section">
+                <span class="anchor" id="Colors_and_Gradients"></span>
+                <h2>Colors and Gradients</h2>
+                <p>Apply colors and gradients to elements to change things like their background color, text color, border color, etc. Below are some of the most common ways to do that.</p>
+<pre class="line-numbers"><code class="language-css">/* using color */
+    .class-name {
+      color: white;
+      color: #ffffff;
+      color: rgb(255, 255, 255);
+    
+      /* Hue Saturation Lightness - Hue is the color, saturation is how much grey is in it, lightness is if its white or black. HSL is great if you want to change the tone of a color. */
+      color: hsl(180, 50%, 50%);
+    }
+    
+      
+    /* linear-gradient will make a gradient. Specify a degree to represent degree, where 45deg is from the bottom left, 90deg is from the left, etc. */
+    
+    .class-name {
+      background: linear-gradient(90deg, red, blue, rgb(255, 54, 52), hsl(150, 50%, 50%));
+    }
+      
+      /* repeating-linear-gradient will repeat the gradient. Colors can blend in to the other or be made solid. */
+      .class-name {
+        background: repeating-linear-gradient(90deg, red 0px, yellow 40px, blue 50px);
+      }
+      /* or to make it solid... */
+      .class-name {
+        background: repeating-linear-gradient(90deg, yellow 0px, yellow 40px, black 40px, black 80px);
+      }
+      
+      
+      /* make it transparent by adding transparent. You can do stuff with this by using box shadow.*/
+      .class-name {
+        background-color: transparent;
+      }</code></pre>
+            </section>
+            <section class="main-section" id="Animations_Section">
+                <span class="anchor" id="Animations"></span>
+                <h2>Animations</h2>
+                <p>To setup an animation, you will need to define animation properties and use the <code class="language-css">@keyframes</code> rule to control what happens during the animation.</p>
+<pre class="line-numbers"><code class="language-css">#id {
+    animation-name: name-here; /* set a name for the animation - this is used later in keyframes to say which rules go with which animations */
+    animation-duration: 3s; /* length of time for aniamtion to happen */
+    animation-fill-mode: forwards; /* this specifies a style once the animation is finished. forwards makes the end result of the animation stay. */
+    animation-iteration-count: infinite; /* how many times should the animation loop? You can use an integer or make it infinite. */
+    animation-timing-function: linear; /* this controls how quickly an animated element changes over the duration of the animation. Options include linear for a consistent pace, ease-in, ease-out and many others. */
+    animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75); /* cubic-bezier offers more control in how the animation plays out. It is based on x1, y1, x2, y2. The example is the same as linear and is the same, since x and y are the same. Depending on the curve in the graph you will have a different animation. x axis can't be more thab 1, but y axis can. */
+    
+    
+  /* Keyframes:
+  This is how to specify what happens within the animation duration. You define 'frames' for the animation from 0-100% - for example, 0% is the start, 45% is near the middle, 100% is how it ends. */
+  @keyframes name-here {
+    0% {
+        background-color: blue;
+      }
+     100% {
+        background-color: yellow;
+      }
+    }
+    
+    
+    /* Example of using it on a hover */
+    <button>Hello</button>
+    
+    button {
+      styles-here;
+    }
+    
+    button.hover { 
+      animation-name: button-ani;
+      animation-duration: 500ms;
+    }
+    
+    @keyframes button-ani {
+      100% {
+        background-color: blue;
+      }
+    }</code></pre>
+            </section>
+            <section class="main-section" id="Flexbox_Section">
+                <span class="anchor" id="Flexbox"></span>
+                <h2>Flexbox</h2>
+                <p>Flexbox allows pages to be setup with 'flexible boxes' that will automatically rearrange on the page. The basic idea is that flexbox allows an easy way to align and rearrange elements in a container. Each box would auto arrange to best fill the available space. </p>
+<pre class="line-numbers"><code class="language-css">----- Apply these to the flex container (parent of flex items) -----
+
+    /* display: flex; is used to position your containers/boxes */
+    display: flex;
+    
+    
+    /* flex-direction property is used to align content. */
+    row /* align align horizontally. By default, flex will use the 'row' setting.  */
+    column /* align vertically */
+    row-reverse /* align horizontally and reverse order */
+    column-reverse /* align vertically and reverse order */
+    {
+    flex-direction: row-reverse;
+    }
+    
+    /* The main axis is a line that cuts through the items - in the row, that is a horizontal line through the middle. For column, its a vertical line. 
+    The cross axis is the one perpendicular to the main axis. */
+    
+    /* justify-content is used to align items along the main axis. BASICALLY - this is about block level elements. */
+    center /* align items center */
+    flex-start /* align items either left for a row or top for a column */
+    flex-end /* align items to the right or bottom on row or column */
+    space-between /* align left item to left, right item to right, and then the remaining items evenly in the remaining space */
+    space-around /* similar to space-between but the items are not locked to the edge of the container */
+    space-evenly /* align items to the center of the axis, with space evenly between each items */
+    
+    
+    /* align-items is a line that cuts through the cross axis. If the flex-direction is a row, the align-items will run down the columns. If your flex-direction is a column, then the align-items will run through the columns. BASICALLY - this is about text and inline content */
+    flex-start /* aligns items to the start of the container - for rows this is the top of the container, for columns this is the left of the container.  */
+    flex-end /* aligns items to the end - for rows, this is the bottom, and for columns, this is the right. */
+    center /* aligns to the center - for rows, this is a vertical alignment (top and bottom), and for columns, its horizontally aligned (left and right) */
+    stretch /* stretch to fill the container - row items fill the box from top to bottom, column stretches lef to right */
+    baseline /* aligns items to their baseline - the line that the letters sit on */
+    
+    
+    /* flex-wrap allows you to move extra items into a new column or row. The wrapping will happen depending on the size of the items and the size of the container. */
+    nowrap /* this is the default setting */
+    wrap /* wraps items from left to right in a row or top to bottom if a column */
+    wrap-reverse /* wraps items in the reverse order */
+    
+    
+    
+    
+    
+    ----- Apply these to the flex items -----
+    
+    /* flex-shrink is used to allow an item to shrink if the flex container is too small. Items shrink when the width of the parent container is smaller than the combined widths of all the flex items within it. This works with integers. The item shrinks more if it has a higher flex-shrink integer. For example, flex-shrink: 3; will shrink 3x more than flex-shrink: 1;. */
+    BOX 1: flex-shrink: 1;
+    BOX 2: flex-shrink: 2;
+    
+    /* flex-grow is used opposite of shrink - it grows the content based on the integer. */
+    BOX 1: flex-grow: 1;
+    BOX 2: flex-grow: 2;
+    
+    /* flex-basis is used to specify the initial size of the items before shrink or grow is used. Can use a normal number like 22px or auto to make it based on the content inside of it */
+    flex-basis: 3em;
+    
+    /* WRITE IT ALL IN ONE LINE: flex: grow# shrink# basis#; */
+    flex: 2 2 auto;
+    
+    /* order allows you set an order for how the box items should be displayed, with an integer */
+    order: -2
+    order: -1
+    order: 0
+    order: 1
+    
+    /* align-self is used in the same way align-items is used, except align-self is for the individual block
+    flex-start
+    flex-end
+    center
+    stretch
+    baseline */
+    align-self: center;
+</code></pre>
+            </section>
+            <section class="main-section" id="CSS_Grids_Section">
+                <span class="anchor" id="CSS_Grids"></span>                
+                <h2>CSS Grids</h2>
+                <p>Grids allows you to turn your HTML elements into a grid with rows and columns. <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target=blank>Click here for a full walktrhough.</a></p>
+<pre class="line-numbers"><code class="language-css">/* display: grid; allows you to turn your HTML element into a grid */
+    display: grid;
+    
+    
+    /* grid-template-columns allows you to set how many columns there should be and the size. Unless a number of rows are specifided, it will auto create rows based on how many items there are. */
+    grid-template-columns: 100px 100px 100px;
+    
+    
+    /* grid-template-rows allows you to define how many rows a grid should have */
+    grid-template-rows: 250px 250px 3fr 2fr auto 10%;
+    
+    
+    /* repeat grid-template-rows/columns to quickly define how many rows/columns to make. You can use different sizes also */
+    grid-template-rows: repeat(100, 50px); /* makes 100 rows of 50px size */
+    grid-template-columns: repeat(2, 1fr 250px 3fr) 20px; /* this translates to 1fr, 50px, 3ft, 1ft, 50px, 3fr, 20px */
+    
+    
+    /* use minmax function to limit the size of items when the grid container changes sizes */
+    grid-template-columns: 100px minmax(50px, 200px); /* this creates two columns - one thats 100px, and another thats at min 50px and at most 200px */
+    
+    
+    /* auto-fill is used to automatically fill the space in your container with as many rows or columns as possible based on the size specs */
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    
+    
+    /* auto-fit is like auto-fill but it doesn't keep adding empty rows/columns, it will stretch items to fit the empty space instead */
+    grid-template-rows: (repeat(auto-fit, minmax(60px 1fr));
+    
+    
+    /* Define size of rows and columns */
+    px
+    em
+    % /* percent of the container */
+    fr /* sets the size to a fraction of the available space (for example if you use 2fr and 1ft in a row, the first row will 2x more of the available space then the second row) */
+    auto /* as wide/tall as the content */
+    
+    
+    /* grid gaps - add gaps between grid elements. grid-gap can do both at the same time, like grid-gap 10px; or it can do rows and columns grid-gap 10px 20px; */
+    grid-gap: 10px 20px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    
+    /* justify-items and align-items can use start, center and end to align all items in the grid */
+    justify-items: end;
+    align-items: center;
+    start /* align to the left */
+    center: /* align center */
+    end /* align to the end */</code></pre>
+    
+                <p>Grids are numbered like the image below, with the top left being 1 and it moving right/down.</p>
+                <figure><img src="images/Grid-Example.png" alt="Example of a Grid Layout"></figure>
+<pre class="line-numbers"><code class="language-css">/* Column Lines controls how many columns an item will consume */
+grid-column: 1 / 3; /* this makes the item start at the first vertical line or the grid on the left and span to the 3rd line */
+griw-row: 2 / 4 /* consume the last two rows */
+    
+/* justify-self allows you to align content in each cell horizontally 
+align-self is used to align content in each cell vertically*/
+justify-content: center;
+align-self: start;
+start /* align to the left */
+center: /* align center */
+end /* align to the end */
+
+/* grid-template-areas - you can group cells together and give them custom names. In the code below, the top 3 cells have the group name "header", the bottom three cells are "footer" and the middle has an empty cell (.) and "content" groups. Each row starts with " and ends with " */
+grid-template-areas:
+"header header header"
+". content content"
+"footer footer footer"
+
+/* grid-area - once you've assigned areas, you can place items in them. */
+.item1 {
+  grid-area: header;
+}
+
+/* grid-area without creating an areas template - use grid areas without defining areas. The format is:
+grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at. */
+item1 {
+  grid-area: 1/1/2/4; 
+} /* in this example, item1 consumes the rows between line 1 and 2, and columns between 1 and 4 */</code></pre>
+            </section>
+            <section class="main-section" id="Responsive_Web_Design_Section">
+                <span class="anchor" id="Responsive_Web_Design"></span>
+                <h2>Responsive Web Design</h2>
+                <p>You have the ability to adjust how a page looks based on if someone is using a certain device, resolution, etc. First, determine if most of your audience is on mobile or wed. If mobile is more important, take a mobile-first approach and then add conditional rules for larger screens. If you are desktop first, then focus on that and then add conditional rules for mobile.</p>
+
+                <p><strong>Define the viewport</strong> by adding the following code to your head tag.</p>
+<pre class="line-numbers"><code class="language-css"><xmp><meta name="viewport" content="width=device-width, initial-scale=1.0"></xmp></code></pre>
+                <p><strong>Define a media query</strong> in order to adjust how the page looks based on different page sizes, etc. <a href="https://css-tricks.com/css-media-queries/" target=blank>Click here for more on media queries.</a></p>
+<pre class="line-numbers"><code class="language-css">@media only screen and (min-width: 960px) {
+    .class {
+      color: red;
+    }
+  }</code></pre>
+            </section>
+        </main>
+        <footer>
+
+        </footer>
+        <script src="scripts/prism.js"></script>
+    </body>
+</html>
